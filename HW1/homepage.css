@@ -1,0 +1,32 @@
+@charset "utf-8"
+* {
+    font-family: "標楷體";
+}
+
+body{
+    background-image: url("pexels-henry-&-co-1939485.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+form{
+    line-height: 2em;
+}
+/* form裡面的input 或 form裡面的select*/
+/* padding 是上下(前)左右(後)要預留多少空間 */
+/* border-radius 加圓角 */
+form>input, form>select{
+    padding: 5px 10px;border: 1px solid gray;border-radius: 5px;
+}
+form>.ok{
+    color: green;
+}
+/* valid: input 輸入框有通過驗證 就會選擇+後面的ok這個class */
+form>input:valid+.ok{
+    display: inline;
+}
+form>input:invalid+.ok{
+    display: none;
+}
