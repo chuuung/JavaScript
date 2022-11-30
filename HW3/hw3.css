@@ -1,0 +1,40 @@
+#container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    /* background: grey; */
+    background-image: url("universe.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1em;
+
+  }
+
+#ball {
+
+  position: absolute;
+  border-radius: 100%;
+  background-image: url("baseball.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#racket{
+  position: absolute;
+  background-color: pink;
+}
+
+.brick{
+  position: absolute;
+  border-radius: 10px;
+
+}
+
+#score{
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  color: white;
+  font-size: 2em;
+}
