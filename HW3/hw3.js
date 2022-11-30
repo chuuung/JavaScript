@@ -19,7 +19,6 @@ function randInt(start, end){
 }
 
 function change_score(b_hard){
-    // console.log(b.hard);
     score += BrickScore[b_hard-1];
     let str = "score: " + score;
     document.getElementById("score").innerHTML = str;
@@ -154,6 +153,9 @@ class Racket extends Component{
 
     }
     setX(x){
+        if (x >= GameWidth - RacketWidth){
+            x = GameWidth - RacketWidth;
+        }
         this.node.style.left = x + "px";
     }
 }
@@ -192,8 +194,13 @@ for(let i = 0; i < BrickRow; i++){
 
 let score = 0;
 
-
 let id = setInterval(ball_start_move, 10);
+
+function racket_move(e){
+    e = e || window.Event;
+    racket.setX(e.offsetX);
+}
+container.addEventListener("mousemove", racket_move);
 
 
 
