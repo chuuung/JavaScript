@@ -1,0 +1,56 @@
+#viewer{
+    position: relative;
+    width: 640px;
+    height: 360px;
+}
+img{
+    position: absolute;
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+    display: none;
+    opacity: 9.0;
+}
+
+#pre, #next{
+    position: absolute;
+    top: 45%;
+    width: 1em;
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    font-size: 3em;
+}
+
+#pre{
+    left: 10px;
+}
+
+#next{
+    right: 10px;
+}
+
+.page{
+    position: absolute;
+    padding: none;
+    height: 10px;
+    background-color: white;
+    opacity: 0.4;
+    
+    border-radius: 1em;
+    top: 96%;
+
+}
+
+.nowpage{
+    position: absolute;
+    padding: none;
+    height: 10px;
+    background-color: white;
+    border-radius: 1em;
+    top: 96%;
+}
+
+.hovercss{
+    background-color: yellow;
+}
