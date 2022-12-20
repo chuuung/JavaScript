@@ -20,6 +20,7 @@ img{
     font-weight: 900;
     color: white;
     font-size: 3em;
+    opacity: 0.6;
 }
 
 #pre{
@@ -43,11 +44,3 @@ img{
 .page{
     opacity: 0.4;
 }
-/* .nowpage{
-    position: absolute;
-    padding: none;
-    height: 5px;
-    background-color: white;
-    border-radius: 1em;
-    top: 96%;
-} */

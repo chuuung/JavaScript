@@ -29,28 +29,23 @@ $(function(){
         $('#pre, #next, .page, .nowpage').hide();
     });
 
-
-    $('#pre').click(function(){
-        let which_pic = imgs.index($('img:visible'));
-        $(`#page${which_pic+1}`).removeClass();
-        $(`#page${which_pic+1}`).addClass('page');
-
-        which_pic = (which_pic-1+imgs.length)%imgs.length;
-        $(`#page${which_pic+1}`).removeClass();
-        $(`#page${which_pic+1}`).addClass('nowpage');
-
-        imgs.hide();
-        imgs.eq(which_pic).show();
-        now_page = which_pic+1;
+    $('#pre, #next').hover(function(){
+        // console.log($(this).attr('id'));
+        $(this).css("opacity", 1.0);
+    },function(){
+        $(this).css("opacity", 0.6);
     });
 
-
-    $('#next').click(function(){
+    //set pre and next event
+    $('#pre, #next').click(function(){
         let which_pic = imgs.index($('img:visible'));
         $(`#page${which_pic+1}`).removeClass();
         $(`#page${which_pic+1}`).addClass('page');
 
-        which_pic = (which_pic+1)%imgs.length;
+        //get which button be clicked
+        if ($(this).attr('id') == "pre") which_pic = (which_pic-1+imgs.length)%imgs.length;
+        else which_pic = (which_pic+1)%imgs.length;
+        
         $(`#page${which_pic+1}`).removeClass();
         $(`#page${which_pic+1}`).addClass('nowpage');
 
