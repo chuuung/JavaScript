@@ -30,23 +30,24 @@ img{
     right: 10px;
 }
 
+.page, .nowpage{
+    position: absolute;
+    padding: none;
+    height: 7px;
+    background-color: white;
+    border-radius: 1em;
+    top: 96%;
+
+}
+
 .page{
-    position: absolute;
-    padding: none;
-    height: 5px;
-    background-color: white;
     opacity: 0.4;
-    
-    border-radius: 1em;
-    top: 96%;
-
 }
-
-.nowpage{
+/* .nowpage{
     position: absolute;
     padding: none;
     height: 5px;
     background-color: white;
     border-radius: 1em;
     top: 96%;
-}
+} */
