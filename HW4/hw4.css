@@ -33,7 +33,7 @@ img{
 .page{
     position: absolute;
     padding: none;
-    height: 10px;
+    height: 5px;
     background-color: white;
     opacity: 0.4;
     
@@ -45,12 +45,8 @@ img{
 .nowpage{
     position: absolute;
     padding: none;
-    height: 10px;
+    height: 5px;
     background-color: white;
     border-radius: 1em;
     top: 96%;
-}
-
-.hovercss{
-    background-color: yellow;
 }

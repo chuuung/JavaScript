@@ -11,7 +11,6 @@ $(function(){
     console.log(pageXinit);
     const viewer = document.getElementById("viewer");
     for(let i = 0; i < imgs.length; i++){
-        // let page = document.createElement("span");
         let page = $(`<span class = \"page\" id = page${i+1}></span>`).text("");
         $("#viewer").append(page);
 
@@ -19,6 +18,8 @@ $(function(){
         else $(".page").attr("class", "page");
 
         $(`#page${i+1}`).css({"width": `${page_width}px`, "left": `${i*(page_width+page_gap) + pageXinit}px`});
+        // let page = document.createElement("span");
+
         // $(".page").css("left", "150");
         // $(".page").css("left", `${i*(page_width+page_gap) + pageXinit}`);
 
@@ -31,7 +32,17 @@ $(function(){
         // page.style.left = i*(page_width+page_gap) + pageXinit + "px";
         // viewer.append(page);
     }
-    
+    //< >
+
+    $('#pre, #next, .page, .nowpage').hide();
+    $('#viewer').mouseover(function(){
+        $('#pre, #next, .page, .nowpage').show();
+    });
+    $('#viewer').mouseout(function(){
+        $('#pre, #next, .page, .nowpage').hide();
+    });
+
+
     $('#pre').click(function(){
         let which_pic = imgs.index($('img:visible'));
         $(`#page${which_pic+1}`).removeClass();
@@ -46,6 +57,7 @@ $(function(){
         now_page = which_pic+1;
     });
 
+
     $('#next').click(function(){
         let which_pic = imgs.index($('img:visible'));
         $(`#page${which_pic+1}`).removeClass();
@@ -59,45 +71,45 @@ $(function(){
         now_page = which_pic+1;
     });
 
-    $('#page1').click(function(){
-
+    //page button
+    function change_page_class(who_click){
         $(`#page${now_page}`).removeClass();
         $(`#page${now_page}`).addClass('page');
-        $('#page1').removeClass();
-        $('#page1').addClass('nowpage');
+        $(`#page${who_click}`).removeClass();
+        $(`#page${who_click}`).addClass('nowpage');
+    }
 
-        imgs.hide();
-        imgs.eq(0).show();
-        now_page = 1;
-    });
+    for (let i = 0; i < imgs.length; i++){
+        $(`#page${i+1}`).click(function(){
 
-    $('#page2').click(function(){
+            change_page_class(i+1);
+            imgs.hide();
+            imgs.eq(i).show();
+            now_page = i+1;
+        });
+    }
+    // $('#page1').click(function(){
 
-        $(`#page${now_page}`).removeClass();
-        $(`#page${now_page}`).addClass('page');
-        $('#page2').removeClass();
-        $('#page2').addClass('nowpage');
+    //     change_page_class(1);
+    //     imgs.hide();
+    //     imgs.eq(0).show();
+    //     now_page = 1;
+    // });
 
-        imgs.hide();
-        imgs.eq(1).show();
-        now_page = 2;
-    });
+    // $('#page2').click(function(){
+    //     change_page_class(2);
 
-    $('#page3').click(function(){
-        $(`#page${now_page}`).removeClass();
-        $(`#page${now_page}`).addClass('page');
-        $('#page3').removeClass();
-        $('#page3').addClass('nowpage');
+    //     imgs.hide();
+    //     imgs.eq(1).show();
+    //     now_page = 2;
+    // });
 
-        imgs.hide();
-        imgs.eq(2).show();
-        now_page = 3;
-    });
-
-    $(".page").hover(function(){
-        $(".page").css({"background-color": "yellow", "opacity": 1.0});
-    },function(){
-        $(".page").css({"background-color": "", "opacity": 0.4});
-    });
+    // $('#page3').click(function(){
+    //     change_page_class(3);
+        
+    //     imgs.hide();
+    //     imgs.eq(2).show();
+    //     now_page = 3;
+    // });
 
 })
