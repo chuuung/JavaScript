@@ -23,7 +23,7 @@ for (let month = 1; month <= 12; month++){
     let days = get_month_days(month);
     let tr_class = 
     out += `<div class = ${months[month-1]}>
-            <img src = m${month}.png></img>
+            <img src = picture/m${month}.png></img>
             <table>
             <tr><td colspan = "7"> ${year} 年 ${month} 月 </td></tr>
             <tr>`;

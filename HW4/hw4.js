@@ -5,8 +5,8 @@ $(function(){
     let now_page = 1;
     const page_width = 60, page_gap = 10;
     const pageXinit = (640 -(page_width*imgs.length))/2;
-    const viewer = document.getElementById("viewer");
 
+    imgs.not(':first').hide();
     //set page button
     for(let i = 0; i < imgs.length; i++){
         let page = $(`<span class = \"page\" id = page${i+1}></span>`).text("");
